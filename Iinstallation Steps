@@ -1,0 +1,563 @@
+[root@centos-s-1vcpu-1gb-blr1-01 ~]# history
+    1  sudo rpm --import https://repo.mysql.com/RPM-GPG-KEY-mysql-2022
+    2  sudo rpm --import https://repo.mysql.com/RPM-GPG-KEY-mysql-2023
+    3  sudo yum localinstall https://dev.mysql.com/get/mysql57-community-release-el7-11.noarch.rpm
+    4  sudo yum install mysql-community-server
+    5  sudo yum localinstall https://dev.mysql.com/get/mysql57-community-release-el7-11.noarch.rpm
+    6  sudo yum install mysql*
+    7  sudo yum install mysql-community-server
+    8  yum -y install git
+    9  svn co https://svn.kannel.org/gateway/trunk kannel-trunk
+   10  cd kannel-trunk
+   11  yum -y install svn
+   12  svn co https://svn.kannel.org/gateway/trunk kannel-trunk
+   13  cd kannel-trunk/
+   14  ls
+   15  ./bootstrap.sh
+   16  yum -y install libtoolize
+   17  yum -y install libtool
+   18  ./bootstrap.sh
+   19  ./configure --with-mysql
+   20  yum -y install *xml*
+   21  ./configure --with-mysql
+   22  yum -y install mysql-devel
+   23  ./configure --with-mysql
+   24  cd
+   25  git clone https://github.com/kneodev/ksmppd.git
+   26  cd ksmppd/example-configurations/
+   27  ls
+   28  cd tests/
+   29  ls
+   30  cd
+   31  cd kannel-trunk/
+   32  make
+   33  make install
+   34  cd
+   35  cd ksmppd/example-configurations/tests/
+   36  /usr/local/sbin/bearerbox ksmppd.conf
+   37  cd
+   38  cd ksmppd/
+   39  yum install -y libevent-devel
+   40  ./bootstrap.sh
+   41  ./configure
+   42  ls
+   43  cd smpp/
+   44  ls
+   45  cd
+   46  cd ksmppd/
+   47  ls
+   48  make
+   49  cd smpp/
+   50  ls
+   51  ksmppd ../example-configurations/database-only/ksmppd.conf
+   52  ./ksmppd ../example-configurations/database-only/ksmppd.conf
+   53  cd ..
+   54  cd
+   55  cd kannel-trunk/addons/
+   56  cd sqlbox/
+   57  ./bootstrap
+   58  ./configure
+   59  make
+   60  make install
+   61  systemctl start mysqld
+   62  grep 'A temporary password' /var/log/mysqld.log |tail -1
+   63  mysql_secure_installation
+   64  grep 'A temporary password' /var/log/mysqld.log |tail -1
+   65  systemctl status mysqld
+   66  systemctl enable mysqld
+   67  grep 'A temporary password' /var/log/mysqld.log |tail -1
+   68  mysql_secure_installation
+   69  mysql -u root -psnFjTXgm6k%
+   70  mysql -u root
+   71  grep 'A temporary password' /var/log/mysqld.log
+   72  date
+   73  tail -f /var/log/mysqld.log
+   74  tail -fn 100 /var/log/mysqld.log
+   75  mysql_secure_installation
+   76  mysql -u root -p
+   77  cd
+   78  ip a
+   79  grep 'temporary password' /var/log/mysqld.log
+   80  mysql -u root -p
+   81  systemctl status mysqld
+   82  systemctl stop mysqld
+   83  mysqld_safe --skip-grant-tables &
+   84   systemctl set-environment MYSQLD_OPTS="--skip-grant-tables"
+   85  systemctl start mysqld
+   86  mysql -u root
+   87  systemctl stop mysqld
+   88  sudo systemctl unset-environment MYSQLD_OPTS
+   89  systemctl start mysqld
+   90  mysql_secure_installation
+   91  cd ksmppd/smpp/
+   92  vim kannel.conf
+   93  yum -y install vim
+   94  vim kannel.conf
+   95  vim sqlbox.conf
+   96  cd ..
+   97  rm ksmppd.conf
+   98  vim ksmppd.conf
+   99  cd smpp/
+  100  /usr/local/sbin/bearerbox kannel.conf
+  101  systemctl status mysql
+  102  systemctl status mysqld
+  103  yum install httpd -y
+  104  systemctl status httpd
+  105  systemctl start httpd
+  106  systemctl enable httpd
+  107  sudo yum -y install phpmyadmin
+  108  yum update -y
+  109  mysql -u root -p
+  110  cd ..
+  111  vim example-configurations/database-only/ksmppd.conf
+  112  /usr/local/sbin/bearerbox kannel.conf
+  113  ls
+  114  cd smpp/
+  115  /usr/local/sbin/bearerbox kannel.conf
+  116  mkdir /tmp/log/
+  117  /usr/local/sbin/bearerbox kannel.conf
+  118  mkdir /tmp/store/
+  119  touch /tmp/store/store.txt
+  120  /usr/local/sbin/bearerbox kannel.conf
+  121  bg
+  122  /usr/local/sbin/smsbox kannel.conf
+  123  /usr/local/sbin/sqlbox sqlbox.conf
+  124  bg
+  125  /usr/local/sbin/smsbox kannel.conf
+  126  bg
+  127  ./ksmppd -v0 ../example-configurations/database-only/ksmppd.conf
+  128  yum -y install https://rpms.remirepo.net/enterprise/remi-release-7.rpm
+  129  sudo yum-config-manager --enable remi-php74
+  130  yum install php php-cli -y
+  131  yum install php php-cli php-fpm php-mysqlnd php-zip php-devel php-gd php-mcrypt php-mbstring php-curl php-xml php-pear php-bcmath php-json -y
+  132  yum install phpmyadmin
+  133  systemctl restarrt httpd
+  134  systemctl restart httpd
+  135  systemctl enable httpd
+  136  systemctl restart httpd
+  137  ./ksmppd -v0 ../example-configurations/database-only/ksmppd.conf
+  138  bg
+  139  vim  /etc/httpd/conf.d/phpMyAdmin.conf
+  140  curl "http://localhost:14010/esme-status?password=ksmppdpass"
+  141  tail -f /tmp/ksmppd.log
+  142  ls
+  143  cd /var/www/html/
+  144  ls
+  145  cd /var/www/html
+  146  sudo git pull origin master
+  147  cd /var/www/html/
+  148  ls
+  149  cd ../
+  150  ls
+  151  sudo git clone https://jangir_deepak@bitbucket.org/jangir_deepak/smpp_ci.git
+  152  ls
+  153  sudo mv html html_old
+  154  sudo mv smpp_ci html
+  155  ls
+  156  cd html
+  157  ls
+  158  mysql
+  159  sudo nano application/config/database.php
+  160  sudo yum install -y nano
+  161  sudo nano application/config/database.php
+  162  mysql -u root -p
+  163  sudo nano application/config/database.php
+  164  sudo nano application/config/config.php
+  165  cd /var/www/html
+  166  sudo nano cron.php
+  167  cd /var/www/html
+  168  sudo nano cron.php
+  169   curl "http://localhost:14010/esme-status?password=ksmppdpass"
+  170  tail -f /tmp/ksmppd.log
+  171  tail -f /tmp/log/access.log
+  172  ps -aux | grep box
+  173  cd ksmppd/smpp/
+  174  vim kannel.conf
+  175  tail -f /tmp/log/kannel.log
+  176  tail -f /tmp/log/sqlbox.log
+  177  tail -f /tmp/ksmppd.log
+  178  ps -aux | grep box
+  179  kill -9 3329
+  180  ps -aux | grep box
+  181  kill -9 3390 3393
+  182  ps -aux | grep box
+  183  vim kannel.conf
+  184  /usr/local/sbin/bearerbox kannel.conf
+  185  bg
+  186  /usr/local/sbin/sqlbox sqlbox.conf
+  187  ps -aux | grep box
+  188  kill -9 29383
+  189  ps -aux | grep box
+  190  vim kannel.conf
+  191  cp kannel.conf kannel.conf.org
+  192  vim kannel.conf
+  193  /usr/local/sbin/bearerbox kannel.conf
+  194  bg
+  195  /usr/local/sbin/smsbox kannel.conf
+  196  bg
+  197  tail -f /t
+  198  vim kannel.conf
+  199  tail -f /tmp/ksmppd.log
+  200  ps -aux | grep ks
+  201  kill -9 3914
+  202  ps -aux | grep ks
+  203  ./ksmppd -v0 ../example-configurations/database-only/ksmppd.conf
+  204  bg
+  205  ./ksmppd -v0 ../example-configurations/database-only/ksmppd.conf
+  206  bg
+  207   /usr/local/sbin/bearerbox kannel.conf
+  208  bg
+  209  /usr/local/sbin/sqlbox sqlbox.conf
+  210  bg
+  211  /usr/local/sbin/smsbox kannel.conf
+  212  bg
+  213  tail -f /tmp/log/kannel.log
+  214  tail -f /tmp/ksmppd.log
+  215  tail -f /tmp/log/kannel.log
+  216  cat /tmp/log/kannel.log
+  217  elinks -dump "http://127.0.0.1:13003/cgi-bin/sendsms?username=test&password=test&from=test-smsc&to=9310793890&text=Hi"
+  218  yum -y install elinks
+  219  elinks -dump "http://127.0.0.1:13003/cgi-bin/sendsms?username=test&password=test&from=test-smsc&to=9310793890&text=Hi"
+  220  vim kannel-trunk/
+  221  cd ksmppd/
+  222  cd smpp/
+  223  vim kannel.conf
+  224  telnet 127.0.0.1 13003
+  225  yum -y install telnet
+  226  telnet 127.0.0.1 13003
+  227  elinks -dump "http://127.0.0.1:13003/cgi-bin/sendsms?username=test&password=test&from=test-smsc&to=9310793890&text=Hi"
+  228  elinks -dump "http://127.0.0.1:13003/cgi-bin/sendsms?username=test&password=test&from=test-smsc&to=9310793890&text=Hi&smsc=test-smsc"
+  229  elinks -dump "http://127.0.0.1:13003/cgi-bin/sendsms?username=test&password=test&from=IAISEE&to=9310793890&text=Dear MRIDUL, You have provisionally registered for AISEE-2024. Your provisional Application No is AE249488425. AISEE&smsc=test-smsc&PE_ID=1101547250000014015&TEMPLATE_ID=1107161073848106914"
+  230  tail /tmp/log/access.log
+  231  elinks -dump "http://127.0.0.1:13003/cgi-bin/sendsms?username=test&password=test&from=IAISEE&to=9310793890&text=Dear MRIDUL, You have provisionally registered for AISEE-2024. Your provisional Application No is AE249488425. AISEE&smsc=test-smsc&PE_ID=1101547250000014015&TEMPLATE_ID=1107161073848106914"
+  232  tail /tmp/log/access.log
+  233  elinks -dump "http://127.0.0.1:13003/cgi-bin/sendsms?username=test&password=test&from=IAISEE&to=9310793890&text=Dear MRIDUL, You have provisionally registered for AISEE-2024. Your provisional Application No is AE249488425. AISEE&smsc=test-smsc&PE_ID=1101547250000014015&TEMPLATE_ID=1107161073848106914&dlr-mask=31"
+  234  tail /tmp/log/access.log
+  235  > /tmp/log/access.log
+  236  tail /tmp/log/access.log
+  237  elinks -dump "http://127.0.0.1:13003/cgi-bin/sendsms?username=test&password=test&from=IAISEE&to=9310793890&text=Dear MRIDUL, You have provisionally registered for AISEE-2024. Your provisional Application No is AE249488425. AISEE&smsc=test-smsc&PE_ID=1101547250000014015&TEMPLATE_ID=1107161073848106914&dlr-mask=31"
+  238  tail /tmp/log/access.log
+  239  cd ../example-configurations/database-only/
+  240  ls
+  241  vim ksmppd.conf
+  242  tail -f /tmp/log/access.log
+  243  tail -f /tmp/ksmppd.log
+  244  tail -f /tmp/log/access.log
+  245  vim ksmppd.conf
+  246  tail -f /tmp/log/access.log
+  247  tail -f /tmp/log/*.log
+  248  tail -f /tmp/log/*.log | grep -i error
+  249  tail -f /tmp/log/access.log
+  250  elinks -dump "http://127.0.0.1:13003/cgi-bin/sendsms?username=test&password=test&from=IAISEE&to=9310793890&text=Dear MRIDUL, You have provisionally registered for AISEE-2024. Your provisional Application No is AE249488425. AISEE&smsc=test-smsc&PE_ID=1101547250000014015&TEMPLATE_ID=1107161073848106914&dlr-mask=31"
+  251  tail -f /tmp/log/access.log
+  252  date
+  253  timedatectl list-timezones
+  254  timedatectl set-timezone Asia/Kolkata
+  255  date
+  256  tail -f /tmp/ka
+  257  tail -f /tmp/log/access.log
+  258  > /tmp/log/access.log
+  259  tail -f /tmp/log/access.log
+  260  tail -f /tmp/log/kannel.log
+  261  tail -f /tmp/log/ksmppd.log
+  262  vim ksmppd.conf
+  263  tail -f /tmp/log/ksmppd.log
+  264  tail -f /tmp/log/access.log
+  265  tail -f /tmp/log/ksmppd.log
+  266  ps -aux | grep ks
+  267  kill -9 29998
+  268  ps -aux | grep ks
+  269  tail -f /tmp/log/ksmppd.log
+  270  ps -aux | grep ks
+  271  ps -aux | grep box
+  272  kill -9 29475
+  273  kill -9 29528
+  274  ps -aux | grep box
+  275  cd ..
+  276  cd../sm
+  277  cd../
+  278  cd ../
+  279  cd smpp/
+  280  vim kannel.conf
+  281  ls -lrth
+  282  cp kannel.conf kannel.conf_050224
+  283  cp kannel.conf.org kannel.conf
+  284  /usr/local/sbin/smsbox kannel.conf
+  285  elinks -dump "http://127.0.0.1:13003/cgi-bin/sendsms?username=test&password=test&from=IAISEE&to=9310793890&text=Dear MRIDUL, You have provisionally registered for AISEE-2024. Your provisional Application No is AE249488425. AISEE&smsc=test-smsc&PE_ID=1101547250000014015&TEMPLATE_ID=1107161073848106914&dlr-mask=31"
+  286  elinks -dump "http://127.0.0.1:13004/cgi-bin/sendsms?username=test&password=test&from=IAISEE&to=9310793890&text=Dear MRIDUL, You have provisionally registered for AISEE-2024. Your provisional Application No is AE249488425. AISEE&smsc=test-smsc&PE_ID=1101547250000014015&TEMPLATE_ID=1107161073848106914&dlr-mask=31"
+  287  ps -aux | grep box
+  288  vim kannel.conf
+  289  ps -aux | grep box
+  290  elinks -dump "http://127.0.0.1:13003/cgi-bin/sendsms?username=test&password=test&from=IAISEE&to=9310793890&text=Dear MRIDUL, You have provisionally registered for AISEE-2024. Your provisional Application No is AE249488425. AISEE&smsc=test-smsc&PE_ID=1101547250000014015&TEMPLATE_ID=1107161073848106914&dlr-mask=31"
+  291  vim /etc/my.cnf
+  292  init 6
+  293  elinks -dump "http://127.0.0.1:13003/cgi-bin/sendsms?username=test&password=test&from=IAISEE&to=9310793890&text=Dear MRIDUL, You have provisionally registered for AISEE-2024. Your provisional Application No is AE249488425. AISEE&smsc=test-smsc&PE_ID=1101547250000014015&TEMPLATE_ID=1107161073848106914&dlr-mask=31"
+  294  telnet 127.0.0.1 13003
+  295  elinks -dump "http://127.0.0.1:13003/cgi-bin/sendsms?username=test&password=test&from=IAISEE&to=9310793890&text=Dear MRIDUL, You have provisionally registered for AISEE-2024. Your provisional Application No is AE249488425. AISEE&smsc=test-smsc&PE_ID=1101547250000014015&TEMPLATE_ID=1107161073848106914&dlr-mask=31"
+  296  tail -f /tmp/log/sqlbox.log
+  297  ps -aux | grep box
+  298  tail -f /tmp/log/sqlbox.log
+  299  tail -f /tmp/log/*.log
+  300  ps -aux | grep box
+  301  kill -9 2351 2401 2496
+  302  ps -aux | grep box
+  303  kill -9 2520
+  304  tail -f /tmp/log/access.log
+  305  tail -f /tmp/log/sqlbox.log
+  306  ps -aux | grep box
+  307  kill -9 3334
+  308  cd ksmppd/smpp/
+  309  vim sqlbox.conf
+  310  vim kannel.conf
+  311  vim sqlbox.conf
+  312  vim kannel.conf
+  313  vim sqlbox.conf
+  314  ps -aux | grep box
+  315   /usr/local/sbin/bearerbox -v 0 kannel.conf
+  316  fg
+  317   /usr/local/sbin/bearerbox -v 5 kannel.conf &
+  318   /usr/local/sbin/sqlbox -v 0 sqlbox.conf &
+  319   /usr/local/sbin/smsbox -v 0 kannel.conf
+  320   /usr/local/sbin/smsbox -v 5 kannel.conf &
+  321  tail -f /tmp/log/*.log
+  322  ps -aux | grep box
+  323  kill -9 3474
+  324  ps -aux | grep box
+  325  vim kannel.conf
+  326  vim sqlbox.conf
+  327   /usr/local/sbin/bearerbox -v 0 kannel.conf
+  328   /usr/local/sbin/bearerbox -v 5 kannel.conf &
+  329   /usr/local/sbin/sqlbox -v 0 kannel.conf
+  330  vim sqlbox.conf
+  331   /usr/local/sbin/sqlbox -v 0 sqlbox.conf
+  332   /usr/local/sbin/sqlbox -v 5 sqlbox.conf &
+  333   /usr/local/sbin/smsbox -v 0 kannel.conf
+  334   /usr/local/sbin/smsbox -v 5 kannel.conf &
+  335  ps -aux | grep box
+  336  tail -f /tmp/log/*.log
+  337  tail -f /tmp/log/sqlbox.log
+  338  ps -aux | grep box
+  339  kill -9 3664
+  340  vim kannel.conf
+  341  vim sqlbox.conf
+  342  /usr/local/sbin/bearerbox -v 5 kannel.conf &
+  343   /usr/local/sbin/sqlbox -v 0 sqlbox.conf
+  344  /usr/local/sbin/bearerbox -v 0 kannel.conf
+  345  vim kannel.conf
+  346  /usr/local/sbin/bearerbox -v 5 kannel.conf &
+  347   /usr/local/sbin/sqlbox -v 0 sqlbox.conf
+  348   /usr/local/sbin/sqlbox -v 5 sqlbox.conf &
+  349  /usr/local/sbin/smsbox -v 5 kannel.conf &
+  350  ps -aux | grep box
+  351  tail -f /tmp/log/*.log
+  352  tail -f /tmp/log/sqlbox.log
+  353  vim kannel.conf
+  354  ps -aux | grep box
+  355  kill -9 3791
+  356  ps -aux | grep box
+  357  /usr/local/sbin/bearerbox -v 0 kannel.conf
+  358  vim kannel.conf
+  359  /usr/local/sbin/bearerbox -v 5 kannel.conf &
+  360   /usr/local/sbin/sqlbox -v 5 sqlbox.conf &
+  361  /usr/local/sbin/smsbox -v 5 kannel.conf &
+  362  ps -aux | grep box
+  363  vim kannel.conf
+  364  vim sqlbox.conf
+  365  ps -aux | grep box
+  366  kill -9 3923
+  367  /usr/local/sbin/bearerbox -v 0 kannel.conf
+  368  vim kannel.conf
+  369  vim sqlbox.conf
+  370  /usr/local/sbin/bearerbox -v 0 kannel.conf
+  371  /usr/local/sbin/bearerbox -v 5 kannel.conf &
+  372  /usr/local/sbin/sqlbox -v 0 sqlbox.conf
+  373  /usr/local/sbin/sqlbox -v 5 sqlbox.conf &
+  374  /usr/local/sbin/smsbox -v 0 kannel.conf
+  375  /usr/local/sbin/smsbox -v 5 kannel.conf &
+  376  tail -f /tmp/log/*.log
+  377  elinks -dump "http://127.0.0.1:13003/cgi-bin/sendsms?username=test&password=test&from=IAISEE&to=9310793890&text=Dear MRIDUL, You have provisionally registered for AISEE-2024. Your provisional Application No is AE249488425. AISEE&smsc=test-smsc&PE_ID=1101547250000014015&TEMPLATE_ID=1107161073848106914&dlr-mask=31"
+  378  cd ksmppd/
+  379  cd smpp/
+  380   /usr/local/sbin/bearerbox kannel.conf
+  381  systemctl status mysqld
+  382  systemctl start mysqld
+  383  journalctl -xe
+  384  systemctl start mysqld
+  385  systemctl status mysqld.service
+  386  vim /etc/my.cnf
+  387  systemctl restart httpd
+  388  systemctl restart mysqld
+  389  journalctl -xe
+  390  cd /etc/
+  391  cd
+  392  vim /etc/my.cnf
+  393  systemctl restart mysqld
+  394  cd ksmppd/smpp/
+  395   /usr/local/sbin/bearerbox kannel.conf
+  396  bg
+  397  ps -aux | grep box
+  398  kill -9 2070
+  399  vim kannel.conf
+  400  vim sqlbox.conf
+  401   /usr/local/sbin/bearerbox kannel.conf
+  402  bg
+  403  /usr/local/sbin/sqlbox sqlbox.conf
+  404  /usr/local/sbin/smsbox kannel.conf
+  405  bg
+  406  elinks -dump "http://127.0.0.1:13003/cgi-bin/sendsms?username=test&password=test&from=IAISEE&to=9310793890&text=Dear MRIDUL, You have provisionally registered for AISEE-2024. Your provisional Application No is AE249488425. AISEE&smsc=test-smsc&PE_ID=1101547250000014015&TEMPLATE_ID=1107161073848106914&dlr-mask=31"
+  407  4
+  408  elinks -dump "http://127.0.0.1:13003/cgi-bin/sendsms?username=test&password=test&from=IAISEE&to=9310793890&text=Dear MRIDUL, You have provisionally registered for AISEE-2024. Your provisional Application No is AE249488425. AISEE&smsc=test-smsc&PE_ID=1101547250000014015&TEMPLATE_ID=1107161073848106914&dlr-mask=31"
+  409  vim kannel.conf
+  410   /usr/local/sbin/bearerbox kannel.conf
+  411  bg
+  412  /usr/local/sbin/smsbox kannel.conf
+  413   /usr/local/sbin/bearerbox -v 5 kannel.conf
+  414  bg
+  415  /usr/local/sbin/smsbox kannel.conf
+  416  vim kannel.conf
+  417  ps -aux | grep box
+  418  kill -9 2581
+  419   /usr/local/sbin/bearerbox -v 5 kannel.conf &
+  420  /usr/local/sbin/smsbox kannel.conf
+  421  bg
+  422  ./ksmppd -v 5 ../example-configurations/database-only/ksmppd.conf
+  423  bg
+  424  tail -f /tmp/log/*.log
+  425  tail -f /tmp/log/access.log
+  426  vim kannel.conf
+  427  ps -aux | grep box
+  428  kill 2642 2692
+  429  vim kannel.conf
+  430  /usr/local/sbin/bearerbox -v 5 kannel.conf
+  431  ps -aux | grep box
+  432  /usr/local/sbin/bearerbox -v 0 kannel.conf
+  433  vim kannel.conf
+  434  /usr/local/sbin/bearerbox -v 0 kannel.conf
+  435  vim kannel.conf
+  436  /usr/local/sbin/bearerbox -v 0 kannel.conf
+  437  /usr/local/sbin/bearerbox -v 5 kannel.conf
+  438  bg
+  439  /usr/local/sbin/sqlbox -v 0 sqlbox.conf
+  440  fg
+  441  /usr/local/sbin/sqlbox -v 5 sqlbox.conf
+  442  bg
+  443  /usr/local/sbin/smsbox -v 0 kannel.conf
+  444  /usr/local/sbin/smsbox -v 5 kannel.conf
+  445  bg
+  446  ps -aux | grep box
+  447  tail -f /tmp/log/*.log
+  448  vim kannel.conf
+  449  vim sqlbox.conf
+  450  ps -aux | grep box
+  451  kill -9 2918
+  452  kill -9 2918  2973 2986
+  453  /usr/local/sbin/bearerbox -v 0 kannel.conf
+  454  /usr/local/sbin/bearerbox -v 5 kannel.conf
+  455  bg
+  456  vim kannel.conf
+  457  /usr/local/sbin/sqlbox -v 0 sqlbox.conf
+  458  /usr/local/sbin/smsbox -v 5 kannel.conf
+  459  /usr/local/sbin/smsbox -v 0 kannel.conf
+  460  /usr/local/sbin/smsbox -v 5 kannel.conf &
+  461  /usr/local/sbin/sqlbox -v 0 sqlbox.conf
+  462  /usr/local/sbin/sqlbox -v 5sqlbox.conf  &
+  463  ps -aux | grep box
+  464  tail -f /tmp/log/*.log
+  465  vim sqlbox.conf
+  466  vim kannel.conf
+  467  cd ../example-configurations/database-only/
+  468  vim ksmppd.conf
+  469  ls
+  470  cd ..
+  471  ls
+  472  vim bearerbox.conf
+  473  cd tests/
+  474  ls
+  475  vim kannel.conf
+  476  ls
+  477  vim ksmppd.conf
+  478  cd
+  479  cd ksmppd/
+  480  cd smpp/
+  481  ls
+  482  cat sqlbox.conf
+  483  vim sqlbox.conf
+  484  vim kannel.conf
+  485  ps -aux | grep box
+  486  kill -9 3067 3146
+  487   /usr/local/sbin/bearerbox -v 0 kannel.conf
+  488  vim kannel.conf
+  489  smsbox-id=sqlbox
+  490  vim sqlbox.conf
+  491   /usr/local/sbin/bearerbox -v 5 kannel.conf &
+  492   /usr/local/sbin/sqlbox -v 0 sqlbox.conf
+  493   /usr/local/sbin/sqlbox -v 5 sqlbox.conf &
+  494   /usr/local/sbin/smsbox -v kannel.conf
+  495   /usr/local/sbin/smsbox -v 5 kannel.conf &
+  496  ps -aux | grep box
+  497  tail -f /tmp/log/*.log
+  498  tail -f /tmp/log/sqlbox.log
+  499  vim sqlbox.conf
+  500  vim kannel.conf
+  501  ps -aux | grep box
+  502  kill -9 3245 3300 3314
+  503  /usr/local/sbin/bearerbox -v o kannel.conf
+  504  bg
+  505  /usr/local/sbin/sqlbox -v o kannel.con
+  506  /usr/local/sbin/sqlbox -v 0 sqlbox.conf
+  507  vim kannel.conf
+  508  vim ../example-configurations/database-only/ksmppd.conf
+  509  ps -aux | grep ks
+  510  kill -9 2703
+  511  ./ksmppd -v 0 ../example-configurations/database-only/ksmppd.conf
+  512  ./ksmppd -v 5 ../example-configurations/database-only/ksmppd.conf &
+  513  tail -f /tmp/log/*.log
+  514  vim ../example-configurations/database-only/ksmppd.conf
+  515  ps -aux | grep ks
+  516  kill 4300
+  517  ./ksmppd -v 0 ../example-configurations/database-only/ksmppd.conf
+  518  ./ksmppd -v 5 ../example-configurations/database-only/ksmppd.conf &
+  519  ps -aux | grep ks
+  520  kill -9 4347
+  521  vim ../example-configurations/database-only/ksmppd.conf
+  522  ./ksmppd -v 0 ../example-configurations/database-only/ksmppd.conf
+  523  vim ../example-configurations/database-only/ksmppd.conf
+  524  ./ksmppd -v 5 ../example-configurations/database-only/ksmppd.conf &
+  525  tail -f /tmp/log/*.log
+  526  cd ksmppd/smpp/
+  527  vim ../example-configurations/database-only/ksmppd.conf
+  528  ls
+  529  vim sqlbox.conf
+  530  vim kannel.conf
+  531  ps -aux | grep ks
+  532  ps -aux | grep box
+  533  kill -9 4136
+  534  ps -aux | grep box
+  535  /usr/local/sbin/bearerbox -v 0 kannel.conf
+  536  vim kannel.conf
+  537  vim ../example-configurations/tests/kannel.conf
+  538  vim ../example-configurations/database-only/ksmppd.conf
+  539  vim kannel.conf
+  540  vim sqlbox.conf
+  541  vim ../example-configurations/database-only/ksmppd.conf
+  542  ./ksmppd -v 5 ../example-configurations/database-only/ksmppd.conf &
+  543  ./ksmppd -v 0 ../example-configurations/database-only/ksmppd.conf
+  544  ps -aux | grep ks
+  545  kill 4395
+  546  ps -aux | grep ks
+  547  ./ksmppd -v 0 ../example-configurations/database-only/ksmppd.conf
+  548  /usr/local/sbin/bearerbox -v 0 kannel.conf
+  549  vim kannel.conf
+  550  /usr/local/sbin/bearerbox -v 0 kannel.conf
+  551  /usr/local/sbin/bearerbox -v 5 kannel.conf &
+  552  /usr/local/sbin/sqlbox -v 0 sqlbox.conf
+  553  /usr/local/sbin/sqlbox -v 5 sqlbox.conf  &
+  554  /usr/local/sbin/smsbox -v 0 kannel.conf
+  555  /usr/local/sbin/smsbox -v 5 kannel.conf &
+  556  ./ksmppd -v 0 ../example-configurations/database-only/ksmppd.conf
+  557  ./ksmppd -v 5 ../example-configurations/database-only/ksmppd.conf &
+  558  tail -f /tmp/log/access.log
+  559  df -h
+  560  init 0
+  561  history
+[root@centos-s-1vcpu-1gb-blr1-01 ~]#
